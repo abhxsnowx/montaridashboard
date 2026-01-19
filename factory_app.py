@@ -36,9 +36,9 @@ st.markdown("""
 # Load models
 @st.cache_resource
 def load_production_models():
-    model = joblib.load(r'C:\Users\Abhilash\Documents\python\motor\production_xgboost_model.pkl')
-    scaler = joblib.load(r'C:\Users\Abhilash\Documents\python\motor\production_scaler.pkl')
-    feature_cols = joblib.load(r'C:\Users\Abhilash\Documents\python\motor\feature_names.pkl')
+    model = joblib.load("models/production_xgboost_model.pkl")
+    scaler = joblib.load("models/production_scaler.pkl")
+    feature_cols = joblib.load("models/feature_names.pkl")
     return model, scaler, feature_cols
 
 model, scaler, feature_cols = load_production_models()
@@ -651,3 +651,4 @@ with footer_col3:
     st.caption("**Accuracy:** MAE ±3.9 units")
 with footer_col4:
     st.caption(f"**Timestamp:** {datetime.now().strftime('%d %B %Y, %H:%M IST')}")
+
